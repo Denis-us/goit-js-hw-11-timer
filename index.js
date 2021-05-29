@@ -69,29 +69,65 @@ function getTimeComponents(time) {
 
 
 
+
+
 // class CountdownTimer {
+
 //     constructor({selector, targetDate} = {}) {
-//         this.selector = selector
-//         this.targetDate = targetDate
-//         this.intervalTimer - null
-//         this.timer()
+//         this.timeId = null;
+//         this.selector = selector;
+//         this.targetDate = targetDate;
 //     }
-// }
 
-// timer() {
-//     this.intervalTimer = setInterval(() => {
-//         let now = newDate()
-//         let restTime = this.time - now
+//     createTime() {
+//         const currentTime = Date.now();
+//         const difference = this.targetDate - currentTime;
+//         const timeForCount = this.receiveTime(difference);
+//         // console.log(${days}:${hours}:${mins}:${secs});
+//         this.clockFace(timeForCount);
 
-//         const days = Math.floor(time / (1000 * 60 * 60 * 24));
-//         const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//         const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-//         const secs = Math.floor((time % (1000 * 60)) / 1000);
+//         if(difference < 0) {
+//             clearInterval(this.timeId);
+//             document.querySelector('#timer-1').textContent = "Поздравляем с началом учебного года!"
+//             return;
+//         };
+//     };
 
-//     }, 1000)
-// }
+//     startCounting() {
+//         this.createTime();
 
-// const timer = new CountdownTimer({
+//         this.timeId = setInterval(() => {
+//         this.createTime()
+
+//        }, 1000) 
+//     };
+
+//     pad(value) {
+//         return String(value).padStart(2, '0');
+//     }
+
+//     clockFace({days, hours, mins, secs}) {
+//         // refs.frontSide.textContent = ${days}:${hours}:${mins}:${secs};
+//         document.querySelector('[data-value="days"]').textContent = ${days};
+//         document.querySelector('[data-value="hours"]').textContent = ${hours};
+//         document.querySelector('[data-value="mins"]').textContent = ${mins};
+//         document.querySelector('[data-value="secs"]').textContent = ${secs};
+//     }
+
+//     receiveTime(time) {
+//         const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+//         const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+//         const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+//         const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+
+//         return {days, hours, mins, secs};
+//         }
+
+// };
+
+// const forTimer = new CountdownTimer({
 //     selector: '#timer-1',
-//     targetDate: new Date('Jul 17, 2019'),
-//   });
+//     targetDate: new Date('Sep 1, 2021'), 
+// });
+
+// forTimer.startCounting();
